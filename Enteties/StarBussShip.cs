@@ -8,6 +8,9 @@ namespace M2S5E1.Enteties
         private CelestialStars location;
         private CelestialStars destination;
 
+        public string Location { get { return location.Name; } }
+        public string Destination { get { return destination.Name; } }
+
         public StarBussShip(ShipClass ship, int maxHealthPoints, int currentHealthPoints, double maxVelocity,
                             int maxPassengers, CelestialStars location, CelestialStars destination) 
                             : base(ship, maxHealthPoints, currentHealthPoints, maxVelocity)

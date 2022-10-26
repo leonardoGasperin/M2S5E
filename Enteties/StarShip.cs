@@ -8,6 +8,10 @@
         protected double maxVelocity;
         protected bool isActive;
 
+        public int MaxHealthPoints { get { return maxHealthPoints; } }
+        public int CurrentHealthPoints { get { return currentHealthPoints; } }
+        public bool IsActive { get { return isActive; } }
+
         public StarShip(ShipClass ship, int maxHealthPoints, int currentHealthPoints, double maxVelocity)
         {
             this.ship = ship;
