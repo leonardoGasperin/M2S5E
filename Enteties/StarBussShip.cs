@@ -17,6 +17,7 @@ namespace M2S5E1.Enteties
             this.destination = destination;
         }
 
+        //exercicie 6
         public void Travel()
         {
             CelestialStars returning = location;
