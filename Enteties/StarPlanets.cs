@@ -1,4 +1,6 @@
-﻿namespace M2S5E1.Enteties
+﻿using System.Drawing;
+
+namespace M2S5E1.Enteties
 {
     internal class StarPlanets : CelestialStars
     {
@@ -9,20 +11,6 @@
                            Dictionary<Resources, int> resources) : base(name, size, mass, gravity, approximateAge)
         {
             this.resources = resources;
-        }
-
-        public void LossResource(int quantity, Resources resource)
-        {
-           foreach(var item in resources)
-            {
-                if(item.Key.ToString() == resources.ToString())
-                {
-                    int valor = item.Value - quantity;
-                    resources.Remove(item.Key);
-                    resources.Add(resource, valor);
-                    break;
-                }
-            }
         }
     }
 }

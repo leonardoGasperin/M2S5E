@@ -17,10 +17,8 @@
             this.isActive = true;
         }
 
-        protected bool isOrbting(CelestialStars orbit)
+        public virtual bool IsOrbting(CelestialStars orbit)
         {
-            if(orbit is Stars)
-                return true;
             return false;
         }
 

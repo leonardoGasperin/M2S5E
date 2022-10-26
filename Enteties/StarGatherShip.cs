@@ -5,11 +5,21 @@
         private int maxCargo;
         private int currentCargo;
 
+        public int MaxCargo { get { return maxCargo; } }
+        public int CurrentCargo { get { return currentCargo; } }
+
         public StarGatherShip(ShipClass ship, int maxHealthPoints, int currentHealthPoints, double maxVelocity, int maxCargo, int currentCgargo) 
                               : base(ship, maxHealthPoints, currentHealthPoints, maxVelocity)
         {
             this.maxCargo = maxCargo;
             this.currentCargo = currentCgargo;
+        }
+
+        public override bool IsOrbting(CelestialStars orbit)
+        {
+            if (orbit is Stars)
+                return true;
+            return false;
         }
 
         public bool Landing(CelestialStars star)
@@ -20,17 +30,24 @@
             return false;
         }
 
-        public void Collect(int quantity, Resources resource, StarPlanets planetResource)
+        public void Collect(int quantity)
         {
-            this.currentCargo += quantity;
-            planetResource.LossResource(quantity, resource);
+            if (CheckCargo(quantity))
+            {
+                this.currentCargo += quantity;
+            }
+            else
+            {
+                Console.WriteLine("Limite de carga muito proximo inpossivel coletar");
+            }
+            
         }
 
-        private int CheckCargo(int quantity)
+        private bool CheckCargo(int quantity)
         {
-            if (currentCargo < maxCargo)
-                return maxCargo - this.currentCargo;
-            return 0;
+            if (currentCargo + quantity < maxCargo)
+                return true;
+            return false;
         }
     }
 }

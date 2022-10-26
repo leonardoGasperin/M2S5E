@@ -4,6 +4,6 @@
     {
         StarWarShip,
         StarGatherShip,
-        StarCargoShip,
+        StarBussShip,
     }
 }

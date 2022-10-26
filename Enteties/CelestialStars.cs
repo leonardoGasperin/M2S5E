@@ -8,6 +8,8 @@
 		protected double gravity;
 		protected int approximateAge = 0;
 
+		public string Name { get { return name; } }
+
 		public CelestialStars(string name, double size, double mass, double gravity, int approximateAge)
 		{
 			this.name = name;
