@@ -20,9 +20,10 @@
             return false;
         }
 
-        public void Collect(int quantity)
+        public void Collect(int quantity, Resources resource, StarPlanets planetResource)
         {
             this.currentCargo += quantity;
+            planetResource.LossResource(quantity, resource);
         }
 
         private int CheckCargo(int quantity)

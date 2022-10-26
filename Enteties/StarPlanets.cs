@@ -10,6 +10,20 @@
         {
             this.resources = resources;
         }
+
+        public void LossResource(int quantity, Resources resource)
+        {
+           foreach(var item in resources)
+            {
+                if(item.Key.ToString() == resources.ToString())
+                {
+                    int valor = item.Value - quantity;
+                    resources.Remove(item.Key);
+                    resources.Add(resource, valor);
+                    break;
+                }
+            }
+        }
     }
 }
 
