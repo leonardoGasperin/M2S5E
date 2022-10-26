@@ -17,12 +17,14 @@
             this.isActive = true;
         }
 
-        protected virtual bool isOrbting()
+        protected bool isOrbting(CelestialStars orbit)
         {
+            if(orbit is Stars)
+                return true;
             return false;
         }
 
-        protected virtual CelestialStars DetectStar()
+        protected CelestialStars DetectStar()
         {
             return new CelestialStars("teste", 1, 50, 95, 888);
         }
