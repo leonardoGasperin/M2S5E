@@ -29,12 +29,14 @@
             return new CelestialStars("teste", 1, 50, 95, 888);
         }
 
+        //exercicie 7
         public void TakeDamage(int damage)
         {
             this.currentHealthPoints -= damage;
             CheckIsActive();
         }
 
+        //exercicie 7
         public void CheckIsActive() 
         {
             int limitPercentageHP = (int)(maxHealthPoints * 0.20);

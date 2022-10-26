@@ -10,6 +10,7 @@
             this.damage = damage;
         }
 
+        //exercicie 7
         public void Atack(StarShip target) 
         { 
             target.TakeDamage(damage);
